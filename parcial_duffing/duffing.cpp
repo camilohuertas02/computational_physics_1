@@ -18,8 +18,8 @@
 #include <vector>
 #include <string>
 
-// Paso de integración (h) fijado según alguna condición previa
-double h = 205.2364/12255;
+// Paso de integración (h) 
+double h = 0.01;
 int eleccion;  // 1: término cúbico, 2: término cuadrático
 
 // Función que representa la ecuación para dv/dt = v'(x,v,t)
@@ -192,7 +192,7 @@ void DerivacionCentrada(){
     }
     
     // Calcular la velocidad con diferencias centradas
-    // En los extremos se asigna 0 (o se podría usar una aproximación unidireccional)
+    // En los extremos se asigna 0 
     velocidades_3.push_back(0);
     for (size_t i = 1; i < tiempos.size()-1; i++){
         velocidad = (posiciones[i+1]-posiciones[i-1])/(tiempos[i+1]-tiempos[i-1]);
